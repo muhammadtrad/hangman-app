@@ -1,6 +1,7 @@
 import Home from './home.js';
 import { sound } from '../data/sound.js';
 import End from './end.js';
+import Board from './board.js';
 
 const Game = (_ => {
 
@@ -25,6 +26,8 @@ const Game = (_ => {
         //show initial screen or page
         showInitPage();
         listeners();
+        Board.init();
+        
     }
 
     const listeners = _ =>{
@@ -59,6 +62,7 @@ const Game = (_ => {
         } else{
             lives--;
             //render the board accordingly
+            Board.setLives(lives);
         }
         render();
         //check if the game is over
